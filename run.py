@@ -53,37 +53,40 @@ def start_game():
 
 start_game()
 
-player_symbol = 'x'
+player_symbol = 'X'
 
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+winner = ''
 
 def game_board():
-    
     '''
     Prints the game board '''
     while True:
-        board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-
-        print(board[0], "| ", board[1], "| ", board[2], "| ",)
+        print(board[1], "| ", board[2], "| ", board[3], "| ",)
         print('-'*14)
-        print(board[3], "| ", board[4], "| ", board[5], "| ",)
+        print(board[4], "| ", board[5], "| ", board[6], "| ",)
         print('-'*14)
-        print(board[6], "| ", board[7], "| ", board[8], "| ",)
+        print(board[7], "| ", board[8], "| ", board[9], "| ",)
         print('\n')
         while True:
             try:
 
-    
                 user_input = int(input('Select a spot 1 to 9!:\n'))
-        
-                if user_input in range(1,10):
+
+                if user_input in range(1, 10):
                     if board[user_input] == ' ':
                         board[user_input] = player_symbol
                         break
                     else:
-                        print('The spot is taken')
+                        print(
+                            f'The spot {user_input} is taken. Choose a different number.')
                 else:
                     print('Invalid selection. Number must be between 1/9')
             except ValueError:
                 print("Please enter a valid number")
 
+
 game_board()
+
+def check_winner():
+    
