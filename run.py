@@ -81,18 +81,74 @@ def game_board(board):
 # checking possible winning options
 
 
-def check_column(board):
-    ''' 
+def check_rows(board):
+    '''
     Checks possible horizontal winning options
     '''
+    # accessing winner variable within the function
     global winner
-    if board[0] == board[1] == board[2] and board[2] != ' ':
+    if board[0] == board[1] == board[2] and board[1] != ' ':
         winner = board[0]
-        print('column')
-    check_column(board)
+        print('checkRow')
+    elif board[3] == board[4] == board[5] and board[3] != ' ':
+        winner = board[4]
+        print('2checkRow')
+    elif board[6] == board[7] == board[8] and board[8] != ' ':
+        winner = board[4]
+        print('3checkRow')
 
+
+check_rows(board)  # need to call this later in the actual game user choice!
+
+
+def check_colum(board):
+    '''
+    Checks possible vertical winning options
+    '''
+    # accessing winner variable within the function
+    global winner
+    if board[0] == board[3] == board[6] and board[0] != ' ':
+        winner = board[0]
+        print('checkcol')
+    elif board[1] == board[4] == board[7] and board[7] != ' ':
+        winner = board[1]
+        print('2checkRow')
+    elif board[2] == board[5] == board[8] and board[8] != ' ':
+        winner = board[2]
+        print('3checkRow')
+
+
+check_colum(board)  # need to call this later in the actual game user choice!
+
+
+def check_oblique(board):
+    '''
+    Checks possible oblique winning options
+    '''
+    # accessing winner variable within the function
+    global winner
+    if board[0] == board[4] == board[8] and board[8] != ' ':
+        winner = board[0]
+        print('check diag')
+    elif board[2] == board[4] == board[6] and board[6] != ' ':
+        winner = board[2]
+        print('check diag')
+
+
+check_oblique(board)  # need to call this later in the actual game user choice!
+
+
+def check_tie(board):
+    if ' ' not in board:
+        print("It's a Tie!")
+
+
+check_tie(board)
+# neet to stop the game and click return to the menu!
 
 # actual game
+
+
 def user_choice():
     '''
     checks users choice on board
