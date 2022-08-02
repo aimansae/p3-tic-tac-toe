@@ -4,7 +4,7 @@ import random  # for computer as player
 
 player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-winner = ''
+winner = None
 computer = None
 
 # welcome the user
@@ -89,16 +89,16 @@ def check_rows(board):
     global winner
     if board[0] == board[1] == board[2] and board[1] != ' ':
         winner = board[0]
-        print('checkRow')
+        return True
     elif board[3] == board[4] == board[5] and board[3] != ' ':
         winner = board[4]
-        print('2checkRow')
+        return True
     elif board[6] == board[7] == board[8] and board[8] != ' ':
         winner = board[4]
-        print('3checkRow')
+        return True
 
 
-check_rows(board)  # need to call this later in the actual game user choice!
+#check_rows(board)  # need to call this later in the actual game user choice!
 
 
 def check_colum(board):
@@ -109,42 +109,88 @@ def check_colum(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] != ' ':
         winner = board[0]
-        print('checkcol')
+        return True
     elif board[1] == board[4] == board[7] and board[7] != ' ':
         winner = board[1]
-        print('2checkRow')
+        return True
     elif board[2] == board[5] == board[8] and board[8] != ' ':
         winner = board[2]
-        print('3checkRow')
+        return True
 
 
-check_colum(board)  # need to call this later in the actual game user choice!
+# check_colum(board)  # need to call this later in the actual game user choice!
 
 
 def check_oblique(board):
     '''
     Checks possible oblique winning options
     '''
-    # accessing winner variable within the function
+
     global winner
     if board[0] == board[4] == board[8] and board[8] != ' ':
         winner = board[0]
-        print('check diag')
+        return True
     elif board[2] == board[4] == board[6] and board[6] != ' ':
         winner = board[2]
-        print('check diag')
+        return True
 
 
-check_oblique(board)  # need to call this later in the actual game user choice!
+# check_oblique(board)  # need to call this later in the actual game user choice!
 
 
 def check_tie(board):
+    ''' 
+    Check it there is no winner, prints a message stating it's a Tie.
+    '''
     if ' ' not in board:
         print("It's a Tie!")
+        
+
+# need to stop the game and click return to the menu!
 
 
-check_tie(board)
-# neet to stop the game and click return to the menu!
+# check_tie(board)  # need to call this later in the actual game user choice!
+
+# changing the player from player 'X' to computer 'O'
+
+
+def change_player():
+    ''' 
+    Switches the player, accessing winner variable within the function with global
+    '''
+    global player_move
+    if player_move == 'X':
+        player_move = 'O'
+        print('change player')
+    else:
+        player_move = 'X'
+
+
+# change_player() # need to call this later in the actual game user choice!
+
+
+
+def computer_move(board):
+    ''' 
+    Chooses a random computer move after the player
+    '''
+    while player_move == 'O':
+        pc_move = random.randint(1, 9)
+        if board[pc_move] == ' ':
+            board[pc_move] = 'O'
+            change_player()
+
+def who_is_the_winner():
+    ''' 
+    Check the winner
+    '''
+    if check_rows(board) or check_oblique(board) or check_colum(board):
+        print(f'The Winner is {winner}')
+
+# need to stop the game and click return to the menu!
+
+
+# who_is_the_winner() # need to call this later in the actual game user choice!
 
 # actual game
 
@@ -173,6 +219,12 @@ def user_choice():
 
             except ValueError:
                 print("Please enter a valid number")
+
+        change_player()
+        computer_move(board)
+        who_is_the_winner()
+        check_tie(board)
+    
 
 
 user_choice()
