@@ -32,6 +32,7 @@ def player_name():
     '''
 
     while True:
+        global name
         name = input("Please Enter your name:").capitalize()
 
         if name.isalpha():
@@ -74,9 +75,9 @@ def game_board(board):
     '''
 
     print(board[1], "| ", board[2], "| ", board[3], "| ",)
-    print('-'*14)
+    print('-'*15)
     print(board[4], "| ", board[5], "| ", board[6], "| ",)
-    print('-'*14)
+    print('-'*15)
     print(board[7], "| ", board[8], "| ", board[9], "| ",)
     print('\n')
 
@@ -196,6 +197,16 @@ def who_is_the_winner():
 
 # who_is_the_winner() # need to call this later in the actual game user choice!
 
+# clear the board if user want to play again
+
+def reset_board():
+    ''' 
+    Clears the board in case user wants to play again
+    '''
+    board.clear()
+    board.extend([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+
+
 def return_to_first_page():
     ''' 
     Asks the user if they want to play again or quit when the game ends
@@ -207,14 +218,15 @@ def return_to_first_page():
     while True:
         global name
         make_a_choice = input().strip()
-        if make_a_choice == '1':
+        if make_a_choice.lower() == 'q':
+            print(f' Thank for playing the game {name}.')
+            quit()
+        elif make_a_choice == '1':
             print(f'Welcome again {name}')
             start_game()
-            game_board(board)
+            reset_board()
             user_choice()
-        elif make_a_choice.lower() == 'q':
-            print(f' Thank for playing the game {name}.')
-            break
+
         else:
             print("Invalid selection. Please select '1' or 'q'")
 
@@ -254,5 +266,6 @@ def user_choice():
         computer_move(board)
         who_is_the_winner()
         check_tie(board)
+
 
 user_choice()
