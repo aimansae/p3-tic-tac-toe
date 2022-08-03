@@ -6,6 +6,7 @@ player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = None
 computer = None
+name = None
 
 # welcome the user
 
@@ -88,14 +89,14 @@ def check_rows(board):
     '''
     # accessing winner variable within the function
     global winner
-    if board[0] == board[1] == board[2] and board[1] != ' ':
-        winner = board[0]
+    if board[1] == board[2] == board[3] and board[1] != ' ':
+        winner = board[1]
         return True
-    elif board[3] == board[4] == board[5] and board[3] != ' ':
+    elif board[4] == board[5] == board[6] and board[4] != ' ':
         winner = board[4]
         return True
-    elif board[6] == board[7] == board[8] and board[8] != ' ':
-        winner = board[4]
+    elif board[7] == board[8] == board[9] and board[9] != ' ':
+        winner = board[7]
         return True
 
 
@@ -108,14 +109,14 @@ def check_colum(board):
     '''
     # accessing winner variable within the function
     global winner
-    if board[0] == board[3] == board[6] and board[0] != ' ':
-        winner = board[0]
-        return True
-    elif board[1] == board[4] == board[7] and board[7] != ' ':
+    if board[1] == board[4] == board[7] and board[1] != ' ':
         winner = board[1]
         return True
     elif board[2] == board[5] == board[8] and board[8] != ' ':
         winner = board[2]
+        return True
+    elif board[3] == board[6] == board[9] and board[9] != ' ':
+        winner = board[3]
         return True
 
 
@@ -128,11 +129,11 @@ def check_oblique(board):
     '''
 
     global winner
-    if board[0] == board[4] == board[8] and board[8] != ' ':
-        winner = board[0]
+    if board[1] == board[5] == board[9] and board[9] != ' ':
+        winner = board[1]
         return True
-    elif board[2] == board[4] == board[6] and board[6] != ' ':
-        winner = board[2]
+    elif board[3] == board[5] == board[7] and board[7] != ' ':
+        winner = board[3]
         return True
 
 
@@ -201,15 +202,21 @@ def return_to_first_page():
     '''
     print('Game Ended!/n')
 
-    make_a_choice = input("Enter '1' to play again or 'Q' to quit.\n")
+    print("Enter '1' to play again")
+    print('Enter "Q" if you want to quit the game')
     while True:
-        if make_a_choice == 1:
-            player_name()
-            break
-        elif make_a_choice == 'q':
+        global name
+        make_a_choice = input().strip()
+        if make_a_choice == '1':
+            print(f'Welcome again {name}')
+            start_game()
+            game_board(board)
+            user_choice()
+        elif make_a_choice.lower() == 'q':
             print(f' Thank for playing the game {name}.')
+            break
         else:
-            print("Invalid selection. Please select '1' or 'Q'")
+            print("Invalid selection. Please select '1' or 'q'")
 
 
 # actual game
@@ -247,6 +254,5 @@ def user_choice():
         computer_move(board)
         who_is_the_winner()
         check_tie(board)
-
 
 user_choice()
