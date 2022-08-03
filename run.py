@@ -14,6 +14,7 @@ print('Welcome to the ultimate TIC TAC TOE Game!\n')
 # print instructions to play the game
 
 show_instructions = '''
+
 Here are the instructions: \n
 - The game presents a 3x3 grid
 - You will start first with the symbol 'X'
@@ -49,7 +50,7 @@ player_name()
 
 def start_game():
     '''
-    asks the user to click start in order to start the game
+    asks the user to enter 'S' to in order to start the game
     '''
 
     while True:
@@ -98,7 +99,7 @@ def check_rows(board):
         return True
 
 
-#check_rows(board)  # need to call this later in the actual game user choice!
+# check_rows(board)  # need to call this later in the actual game user choice!
 
 
 def check_colum(board):
@@ -144,7 +145,7 @@ def check_tie(board):
     '''
     if ' ' not in board:
         print("It's a Tie!")
-        
+
 
 # need to stop the game and click return to the menu!
 
@@ -161,13 +162,12 @@ def change_player():
     global player_move
     if player_move == 'X':
         player_move = 'O'
-        print('change player')
+
     else:
         player_move = 'X'
 
 
 # change_player() # need to call this later in the actual game user choice!
-
 
 
 def computer_move(board):
@@ -180,17 +180,37 @@ def computer_move(board):
             board[pc_move] = 'O'
             change_player()
 
+
 def who_is_the_winner():
     ''' 
-    Check the winner
+    Check the winner evaluating the possible winning options defined above
     '''
     if check_rows(board) or check_oblique(board) or check_colum(board):
         print(f'The Winner is {winner}')
+        return_to_first_page()
+
 
 # need to stop the game and click return to the menu!
 
 
 # who_is_the_winner() # need to call this later in the actual game user choice!
+
+def return_to_first_page():
+    ''' 
+    Asks the user if they want to play again or quit when the game ends
+    '''
+    print('Game Ended!/n')
+
+    make_a_choice = input("Enter '1' to play again or 'Q' to quit.\n")
+    while True:
+        if make_a_choice == 1:
+            player_name()
+            break
+        elif make_a_choice == 'q':
+            print(f' Thank for playing the game {name}.')
+        else:
+            print("Invalid selection. Please select '1' or 'Q'")
+
 
 # actual game
 
@@ -205,6 +225,7 @@ def user_choice():
         while True:
 
             try:
+                print("It's your turn!\n")
                 user_input = int(input('Select a spot 1 to 9!:\n'))
 
                 if user_input in range(1, 10):
@@ -220,11 +241,12 @@ def user_choice():
             except ValueError:
                 print("Please enter a valid number")
 
+        who_is_the_winner()
+        check_tie(board)
         change_player()
         computer_move(board)
         who_is_the_winner()
         check_tie(board)
-    
 
 
 user_choice()
