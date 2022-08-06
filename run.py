@@ -145,8 +145,10 @@ def check_tie(board):
     ''' 
     Check it there is no winner, prints a message stating it's a Tie.
     '''
-    if ' ' not in board:
-        print("It's a Tie!")
+    if board.count(' ') > 1:
+        return False
+    else:
+        return True    
 
 
 # need to stop the game and click return to the menu!
@@ -183,13 +185,18 @@ def computer_move(board):
             change_player()
 
 
-def who_is_the_winner():
+def who_is_the_winner(board):
     ''' 
     Check the winner evaluating the possible winning options defined above
     '''
     if check_rows(board) or check_oblique(board) or check_colum(board):
         print(f'The Winner is {winner}')
         return_to_first_page()
+    elif check_tie(board):
+        print("It's a Tie!")
+        return_to_first_page()    
+    
+        
 
 
 # need to stop the game and click return to the menu!
@@ -260,11 +267,11 @@ def user_choice():
             except ValueError:
                 print("Please enter a valid number")
 
-        who_is_the_winner()
+        who_is_the_winner(board)
         check_tie(board)
         change_player()
         computer_move(board)
-        who_is_the_winner()
+        who_is_the_winner(board)
         check_tie(board)
 
 
