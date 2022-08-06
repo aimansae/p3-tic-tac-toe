@@ -1,16 +1,25 @@
+from time import sleep  # animation for welcome title
+import sys
+
 import random  # for computer as player
 
-# main variables for board, player's move, winner and computer's move
+# main variables for board, player's move, winner
 
 player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = None
-computer = None
 name = None
 
 # welcome the user
 
-print('Welcome to the ultimate TIC TAC TOE Game!\n')
+welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
+
+for x in welcome_title:
+    print(x, end='')
+    sys.stdout.flush()
+    sleep(0.1)
+
+
 
 # print instructions to play the game
 
@@ -148,7 +157,7 @@ def check_tie(board):
     if board.count(' ') > 1:
         return False
     else:
-        return True    
+        return True
 
 
 # need to stop the game and click return to the menu!
@@ -194,9 +203,7 @@ def who_is_the_winner(board):
         return_to_first_page()
     elif check_tie(board):
         print("It's a Tie!")
-        return_to_first_page()    
-    
-        
+        return_to_first_page()
 
 
 # need to stop the game and click return to the menu!
@@ -251,7 +258,7 @@ def user_choice():
         while True:
 
             try:
-                print("It's your turn!\n")
+
                 user_input = int(input('Select a spot 1 to 9!:\n'))
 
                 if user_input in range(1, 10):
@@ -262,10 +269,10 @@ def user_choice():
                         print(
                             f'The spot {user_input} is taken. Choose a another number.')
                 else:
-                    print('Invalid selection. Number must be between 1/9')
+                    print('Invalid selection. Number must be between 1/9!\n')
 
             except ValueError:
-                print("Please enter a valid number")
+                print("Please enter a valid number:\n")
 
         who_is_the_winner(board)
         check_tie(board)
