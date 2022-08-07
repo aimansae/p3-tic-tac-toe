@@ -1,16 +1,9 @@
 from time import sleep  # animation for welcome title
 import sys
 
-import random  # for computer as player
+import random  # for computer move
 
-# main variables for board, player's move, winner
-
-player_move = 'X'
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-winner = None
-name = None
-
-# welcome the user
+# welcome title with aimation
 
 welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
 
@@ -19,6 +12,12 @@ for x in welcome_title:
     sys.stdout.flush()
     sleep(0.1)
 
+# main variables for board, player's move, winner
+
+player_move = 'X'
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+winner = None
+name = None
 
 
 # print instructions to play the game
@@ -29,8 +28,9 @@ Here are the instructions: \n
 - The game presents a 3x3 grid
 - You will start first with the symbol 'X'
 - The computer will be shown as the opposite symbol 'O'
-- Place your symbol replacing one of the 9 numbers displayed
-- The first among the players who have 3 same symbol in line, horizontally, vertically or    in a row Wins
+- Place your symbol typing a number from 1-9 on an empty spot
+- The first among the players who have 3 same symbol in a line,
+  horizontally, vertically or diagonally WINS!
 - If all the 9 spots are full and no one wins it's a tie!
 '''
 
@@ -42,18 +42,18 @@ def player_name():
 
     while True:
         global name
-        name = input("Please Enter your name:").capitalize()
+        name = input("\nPlease Enter your name:\n").capitalize()
 
         if name.isalpha():
             print("\n")
-            print(f'Hi {name} welcome to the game!')
+            print(f"Hi {name} welcome to the game!")
             print(show_instructions)
 
             break
 
         else:
-            print(
-                f'{name} is Invalid username. Only name with letter accepted. Please try again')
+            print("Oops Invalid input. Only letters accepted.")
+            print("\n Please try again.")
 
 
 player_name()
@@ -90,14 +90,15 @@ def game_board(board):
     print(board[7], "| ", board[8], "| ", board[9], "| ",)
     print('\n')
 
+
 # checking possible winning options
+# accessing winner variable within the function
 
 
 def check_rows(board):
     '''
     Checks possible horizontal winning options
     '''
-    # accessing winner variable within the function
     global winner
     if board[1] == board[2] == board[3] and board[1] != ' ':
         winner = board[1]
@@ -110,14 +111,10 @@ def check_rows(board):
         return True
 
 
-# check_rows(board)  # need to call this later in the actual game user choice!
-
-
 def check_colum(board):
     '''
     Checks possible vertical winning options
     '''
-    # accessing winner variable within the function
     global winner
     if board[1] == board[4] == board[7] and board[1] != ' ':
         winner = board[1]
@@ -130,14 +127,10 @@ def check_colum(board):
         return True
 
 
-# check_colum(board)  # need to call this later in the actual game user choice!
-
-
 def check_oblique(board):
     '''
     Checks possible oblique winning options
     '''
-
     global winner
     if board[1] == board[5] == board[9] and board[9] != ' ':
         winner = board[1]
@@ -147,12 +140,9 @@ def check_oblique(board):
         return True
 
 
-# check_oblique(board)  # need to call this later in the actual game user choice!
-
-
 def check_tie(board):
-    ''' 
-    Check it there is no winner, prints a message stating it's a Tie.
+    '''
+    Checks for a graw, prints a message stating It's a Tie.
     '''
     if board.count(' ') > 1:
         return False
@@ -160,17 +150,11 @@ def check_tie(board):
         return True
 
 
-# need to stop the game and click return to the menu!
-
-
-# check_tie(board)  # need to call this later in the actual game user choice!
-
 # changing the player from player 'X' to computer 'O'
-
 
 def change_player():
     ''' 
-    Switches the player, accessing winner variable within the function with global
+    Switches the player after user's move
     '''
     global player_move
     if player_move == 'X':
@@ -180,12 +164,9 @@ def change_player():
         player_move = 'X'
 
 
-# change_player() # need to call this later in the actual game user choice!
-
-
 def computer_move(board):
-    ''' 
-    Chooses a random computer move after the player
+    '''
+    Chooses a random computer move after the player's choice
     '''
     while player_move == 'O':
         pc_move = random.randint(1, 9)
@@ -195,34 +176,33 @@ def computer_move(board):
 
 
 def who_is_the_winner(board):
-    ''' 
-    Check the winner evaluating the possible winning options defined above
+    '''
+    Checks the winner or a tie, 
+    evaluating the possible winning options
+    defined above
     '''
     if check_rows(board) or check_oblique(board) or check_colum(board):
+        game_board(board)
         print(f'The Winner is {winner}')
         return_to_first_page()
     elif check_tie(board):
+        game_board(board)
         print("It's a Tie!")
         return_to_first_page()
 
 
-# need to stop the game and click return to the menu!
-
-
-# who_is_the_winner() # need to call this later in the actual game user choice!
-
 # clear the board if user want to play again
 
 def reset_board():
-    ''' 
-    Clears the board in case user wants to play again
+    '''
+    Resets the board if user wants to play again
     '''
     board.clear()
     board.extend([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
 
 
 def return_to_first_page():
-    ''' 
+    '''
     Asks the user if they want to play again or quit when the game ends
     '''
     print('Game Ended!/n')
