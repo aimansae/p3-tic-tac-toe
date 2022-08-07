@@ -12,12 +12,14 @@ for x in welcome_title:
     sys.stdout.flush()
     sleep(0.1)
 
-# main variables for board, player's move, winner
+# main variables for board, player's move, winner and scores
 
 player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = None
 name = None
+x_score = 0
+o_score = 0
 
 
 # print instructions to play the game
@@ -80,8 +82,10 @@ start_game()
 
 def game_board(board):
     '''
-    Prints the game board
+    Prints scores at the top and the game board
     '''
+    print(f'Your Score: {x_score:>5}    Pc Score:{o_score:>5}')
+    print('\n')
 
     print(board[1], "| ", board[2], "| ", board[3], "| ",)
     print('-'*15)
@@ -184,11 +188,28 @@ def who_is_the_winner(board):
     if check_rows(board) or check_oblique(board) or check_colum(board):
         game_board(board)
         print(f'The Winner is {winner}')
+        scores()
         return_to_first_page()
+
     elif check_tie(board):
         game_board(board)
         print("It's a Tie!")
         return_to_first_page()
+
+def scores():
+    ''' 
+    Checks and stores winning amounts
+    '''
+    if winner == 'X':
+        global x_score
+        x_score += 1
+        
+    elif winner == 'O':
+        global o_score
+        o_score += 1
+        
+
+
 
 
 # clear the board if user want to play again
