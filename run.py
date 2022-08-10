@@ -1,6 +1,6 @@
 from time import sleep  # animation for welcome title
-import sys
-
+import time  # for game starting statement to disappear
+import sys  # to access parameters and functions
 import random  # for computer move
 
 # welcome title with aimation
@@ -44,7 +44,7 @@ def player_name():
 
     while True:
         global name
-        name = input("\nPlease Enter your name:\n").capitalize()
+        name = input("\nPlease Enter your name:").capitalize()
 
         if name.isalpha():
             print("\n")
@@ -68,10 +68,12 @@ def start_game():
 
     while True:
 
+        game_starting = "Game starting...\n"
         start_game_input = input("Type 'S' to start the game:").lower()
 
         if start_game_input == 's':
-            print('Game starting...\n')
+            print(game_starting, end="")
+            time.sleep(1)
             break
         else:
             print(f"{start_game_input} Incorrect Input. Enter:'s' to start.")
@@ -82,8 +84,9 @@ start_game()
 
 def game_board(board):
     '''
-    Prints scores at the top and the game board
+    Prints scores at the top and the game board right after that
     '''
+    print('\n')
     print(f'Your Score: {x_score:>5}    Pc Score:{o_score:>5}')
     print('\n')
 
@@ -157,7 +160,7 @@ def check_tie(board):
 # changing the player from player 'X' to computer 'O'
 
 def change_player():
-    ''' 
+    '''
     Switches the player after user's move
     '''
     global player_move
@@ -181,14 +184,26 @@ def computer_move(board):
 
 def who_is_the_winner(board):
     '''
-    Checks the winner or a tie, 
+    Checks the winner or a tie,
     evaluating the possible winning options
     defined above
     '''
     if check_rows(board) or check_oblique(board) or check_colum(board):
+        # increments score for user if he won
+        if winner == 'X':
+            global x_score
+            x_score += 1
+        # increments score for user if he won
+        if winner == 'O':
+            global o_score
+            o_score += 1
+
         game_board(board)
-        print(f'The Winner is {winner}')
-        scores()
+        if winner == 'X':
+            print("You won!")
+        elif winner == 'O':
+            print("Oops Computer won!")
+
         return_to_first_page()
 
     elif check_tie(board):
@@ -196,23 +211,8 @@ def who_is_the_winner(board):
         print("It's a Tie!")
         return_to_first_page()
 
-def scores():
-    ''' 
-    Checks and stores winning amounts
-    '''
-    if winner == 'X':
-        global x_score
-        x_score += 1
-        
-    elif winner == 'O':
-        global o_score
-        o_score += 1
-        
-
-
-
-
 # clear the board if user want to play again
+
 
 def reset_board():
     '''
@@ -260,7 +260,7 @@ def user_choice():
 
             try:
 
-                user_input = int(input('Select a spot 1 to 9!:\n'))
+                user_input = int(input('Select a spot 1 to 9! :'))
 
                 if user_input in range(1, 10):
                     if board[user_input] == ' ':
@@ -268,7 +268,8 @@ def user_choice():
                         break
                     else:
                         print(
-                            f'The spot {user_input} is taken. Choose a another number.')
+                            f"The spot {user_input} is taken."
+                            "Choose another number.")
                 else:
                     print('Invalid selection. Number must be between 1/9!\n')
 
