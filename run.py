@@ -44,7 +44,7 @@ def player_name():
     '''
     while True:
         global name
-        name = input("\nPlease Enter your name:").capitalize()
+        name = input("\nPlease Enter your name:\n").capitalize()
 
         if name.isalpha():
             print("\n")
@@ -66,10 +66,13 @@ def start_game():
     asks the user to enter 'S' to in order to start the game
     '''
     while True:
-        start_game_input = input("Type 'S' to start the game:").lower()
+        start_game_input = input("Type 'S' to start the game:\n").lower()
         if start_game_input == 's':
-            game_starting = "Game starting..."
+            # making Game starting disappear after few secs
+            game_starting = 'Game Starting...'
             print(game_starting, end="\r")
+            time.sleep(1)
+            print(" " * len(game_starting), end="\r")
             time.sleep(1)
             break
         else:
@@ -177,8 +180,6 @@ def computer_move(board):
         if board[pc_move] == ' ':
             board[pc_move] = 'O'
             change_player()
-        else:
-            return None
 
 
 def who_is_the_winner(board):
@@ -267,7 +268,7 @@ def user_choice():
 
             try:
 
-                user_input = int(input('Select a spot 1 to 9! :'))
+                user_input = int(input('Select a spot 1 to 9! :\n'))
 
                 if user_input in range(1, 10):
                     if board[user_input] == ' ':
