@@ -1,3 +1,4 @@
+'''importing modules'''
 from time import sleep  # animation for welcome title
 import time  # for game starting statement to disappear
 import sys  # to access parameters and functions
@@ -10,7 +11,7 @@ welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
 for x in welcome_title:
     print(x, end='')
     sys.stdout.flush()
-    sleep(0.1)
+    sleep(.1)
 
 # main variables for board, player's move, winner and scores
 
@@ -41,7 +42,6 @@ def player_name():
     '''
     Gets player's name accepting only alphabetical characters
     '''
-
     while True:
         global name
         name = input("\nPlease Enter your name:").capitalize()
@@ -65,14 +65,11 @@ def start_game():
     '''
     asks the user to enter 'S' to in order to start the game
     '''
-
     while True:
-
-        game_starting = "Game starting...\n"
         start_game_input = input("Type 'S' to start the game:").lower()
-
         if start_game_input == 's':
-            print(game_starting, end="")
+            game_starting = "Game starting..."
+            print(game_starting, end="\r")
             time.sleep(1)
             break
         else:
@@ -180,6 +177,8 @@ def computer_move(board):
         if board[pc_move] == ' ':
             board[pc_move] = 'O'
             change_player()
+        else:
+            return None
 
 
 def who_is_the_winner(board):
@@ -189,27 +188,36 @@ def who_is_the_winner(board):
     defined above
     '''
     if check_rows(board) or check_oblique(board) or check_colum(board):
-        # increments score for user if he won
-        if winner == 'X':
-            global x_score
-            x_score += 1
-        # increments score for user if he won
-        if winner == 'O':
-            global o_score
-            o_score += 1
-
+        check_score()
         game_board(board)
+
         if winner == 'X':
-            print("You won!")
+            print("You won!\n")
         elif winner == 'O':
-            print("Oops Computer won!")
+            print("Oops Computer won!\n")
 
         return_to_first_page()
 
     elif check_tie(board):
         game_board(board)
-        print("It's a Tie!")
+        print("It's a Tie!\n")
         return_to_first_page()
+    else:
+        return None
+
+
+def check_score():
+    '''
+    Increments score in case of a win
+    '''
+    if winner == 'X':
+        global x_score
+        x_score += 1
+    elif winner == 'O':
+        global o_score
+        o_score += 1
+    else:
+        return None
 
 # clear the board if user want to play again
 
@@ -226,15 +234,15 @@ def return_to_first_page():
     '''
     Asks the user if they want to play again or quit when the game ends
     '''
-    print('Game Ended!/n')
+    print("Game Ended...\n")
 
-    print("Enter '1' to play again")
-    print('Enter "Q" if you want to quit the game')
+    print("Enter '1' to play again.")
+    print('Enter "Q" if you want to quit the game.')
     while True:
         global name
         make_a_choice = input().strip()
         if make_a_choice.lower() == 'q':
-            print(f' Thank for playing the game {name}.')
+            print(f'Thank for playing the game {name}.')
             quit()
         elif make_a_choice == '1':
             print(f'Welcome again {name}')
@@ -247,7 +255,6 @@ def return_to_first_page():
 
 
 # actual game
-
 
 def user_choice():
     '''
