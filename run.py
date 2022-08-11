@@ -276,7 +276,7 @@ def user_choice():
                         break
                     else:
                         print(
-                            f"The spot {user_input} is taken."
+                            f"The spot {user_input} is taken. "
                             "Choose another number.")
                 else:
                     print('Invalid selection. Number must be between 1/9!\n')
