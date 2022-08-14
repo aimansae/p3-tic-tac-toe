@@ -23,7 +23,6 @@ name = None
 x_score = 0
 o_score = 0
 
-
 # print instructions to play the game
 
 show_instructions = '''
@@ -150,7 +149,7 @@ def check_oblique(board):
 
 def check_tie(board):
     '''
-    Checks for a graw, prints a message stating It's a Tie.
+    Checks for a draw, prints a message stating "It's a Tie".
     '''
     if board.count(' ') > 1:
         return False

@@ -113,17 +113,18 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 - Python pylint reports currently 3 main and known issues:
 
   - Using the global statement: global statement is used during the creation of the game to access global variables, listed at the top of python file. The usage of 'global' is not fully recommended as it can make harder to detect bugs and issuees in a very big program, however building Tic Tac Toe game as a beginner, I found it a simple approach to define the global variables in the begining of the file and access them later whenever needed in the functions.
-  - Redefining name 'Variale ' form outer scope
 
   - Constant name 'variable' doesn't conform to UPPER_CASE naming style: variable used are not indended as constant in this game, they respect the expected naming convention, furthermore the code passes Pep8 Validator correctly.
 
+  - Redefining  name 'board' from outer the scope: this issue passes through Pep8 as well. As per mentor's confirmation  
+
   ## Bugs and Solutions
 
-- Function for scores was not working, if was not being called correctly. Fixed the issue bit calling in in  who_is_the_winner(board) right after checking wind for all possible rows.
+- Function for scores was not working, it was not being called correctly. Fixed the issue by calling it in  who_is_the_winner(board) function, right after checking win for all possible rows.
 
 - Method to make 'Game starting' disappear after few second was not working'. Needed to implement print(" " * len(game_starting), end="\r").
 
-- 
+- Name and move input validation was not fully functional. Went back to 'Love Sandwiches' video for exceptions, and implemented code correctly.
 
 
 
