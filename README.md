@@ -105,5 +105,26 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 
 ## Testing
 
-Testing was conducted very carefully through the entire project
+Testing was conducted very carefully through the entire project. Pep 8 validator came back with no issues
+[Pep8](http://pep8online.com/)
+
+![Validator Pep8](images/pep8.png) 
+
+- Python pylint reports currently 3 main and known issues:
+
+  - Using the global statement: global statement is used during the creation of the game to access global variables, listed at the top of python file. The usage of 'global' is not fully recommended as it can make harder to detect bugs and issuees in a very big program, however building Tic Tac Toe game as a beginner, I found it a simple approach to define the global variables in the begining of the file and access them later whenever needed in the functions.
+  - Redefining name 'Variale ' form outer scope
+
+  - Constant name 'variable' doesn't conform to UPPER_CASE naming style: variable used are not indended as constant in this game, they respect the expected naming convention, furthermore the code passes Pep8 Validator correctly.
+
+  ## Bugs and Solutions
+
+- Function for scores was not working, if was not being called correctly. Fixed the issue bit calling in in  who_is_the_winner(board) right after checking wind for all possible rows.
+
+- Method to make 'Game starting' disappear after few second was not working'. Needed to implement print(" " * len(game_starting), end="\r").
+
+- 
+
+
+
 
