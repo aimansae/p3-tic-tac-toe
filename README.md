@@ -9,7 +9,7 @@ The first player who gets 3 same symbols in a row (horizontally, vertically or d
 
 Please find the live project [here:](https://p3-tic-tac-toe.herokuapp.com/) 
 
-[AmIResponsive](images/amiresponsive.png)
+![AmIResponsive](images/amiresponsive.png)
 
 ## Table Of Contents
 
