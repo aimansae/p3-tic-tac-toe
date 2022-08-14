@@ -126,6 +126,27 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 
 - Name and move input validation was not fully functional. Went back to 'Love Sandwiches' video for exceptions, and implemented code correctly.
 
+## Development and Deployment
+
+This project was developed through Gitpod, using the template provided from Code Institure. Every step was documented and pushed thoroughly via GitHub.
+
+The deployment is made using [Heroku](https://www.heroku.com/) following the listed steps:
+
+1. Log in or register a new account on Heroku
+2. Click on 'New' in the dashboard and select 'Create New App'
+3. Select a name for the app and choose your region.
+4. Click on "Create app"
+4. When the app is created by clicking on Setting 
+5. To improve compatibility with various Python libraries add  Config Var with Key = PORT and the Value = 8000 
+5. Add 2 buildpacks: Python and then nodes in this specific order
+6. Go back at the top and click on 'Deploy' and select 'GitHub'
+7. Scroll down and click on 'Connect to GitHub'
+8. Search for your GitHub repository name by typing it 
+9. Click on 'Connect'
+10. Scroll down and click on 'Deploy Branch'
+11. You will see a message 'The app was successfully deployed when the app is built with python and all the depencencies
+12. Click on view and you will see the [deployed site](https://p3-tic-tac-toe.herokuapp.com/)
+
 
 
 
