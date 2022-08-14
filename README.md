@@ -23,12 +23,11 @@ Please find the live project [here:](https://p3-tic-tac-toe.herokuapp.com/)
   + [Play Game](#Start-Game "Play Game")
 + [Future Features](#future-features "Future Features") 
 + [External Sources Used](#external-sources-used "External Sources Used")  
-   
-
-
-
-
-
++ [Python Libraries Used](#python-libraries-used "Python Libraries Used")  
++ [Testing](#testing "Testing")
++ [Bugs and Solutions](#bugs-and-solutions "Bugs and Solutions")
++ [Development and Deployment](#development-and-deployment "Development and Deployment")
++ [Credits](#Credits "Credits")
 
 
 ## UX:
@@ -46,7 +45,7 @@ Please find the live project [here:](https://p3-tic-tac-toe.herokuapp.com/)
 Once the program runs, the user is welcomed to the game and they are asked them to insert their Name. This will be used through the game for fidelization purposes.
 The "welcome to the game" statement has a sys.stdout.flush() method applied for a better visual effect.
 
-![Introduction](images/introduction.screenshot.png) 
+![Introduction](images/introduction-screenshot.png) 
 
 ### Instructions
 
@@ -54,11 +53,13 @@ After the validated name is inserted, a small explaination of the rules is shown
 
 ![Instructions](images/instructions.png) 
 
+
 ### Start Game
 
 In the next step the user is asked to type "S" to start playing. Thanks to the validation applied, the terminal will accept any "S" format, uppercase or lowercase, if the element typed ny the user is different that "S" they will get error message stating to type "S" again correctly.
 
 ![Start Game](images/start-game.png) 
+
 
 ### Play Game
 
@@ -66,6 +67,7 @@ The user will get to play first, with the Sumbol 'X', while the PC will be shown
 The game is fully validated, so if the user choses a spot already taken they will get the relative message. In case of a win, the score will incerement and it's shown before right on top on the game board.
 
 ![Play Game](images/play-game.png)
+
 
 ### Play Again or quit
 
@@ -76,6 +78,7 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
  
 [Back to top](#table-of-contents)
 
+
 ## Future Features
 
 - Give an option to the user to choose the symbol they want
@@ -84,12 +87,14 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 - Send scores via email
 - make an impossible to win game against the computer
 
+
 ## Technology Used
 
  - [Python](https://www.python.org/) 
  - [JavaScript](https://www.javascript.com/) provided in the Code Institute Template
  - [CSS](https://en.wikipedia.org/wiki/CSS)  provided in the Code Institute Template
  - [HTML](https://en.wikipedia.org/wiki/HTML)  provided in the Code Institute Template
+
 
 ## External Sources Used
 
@@ -98,11 +103,13 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 - Youtube
 - [Am I Responsive](https://ui.dev/amiresponsive) to create the main image for README.md
 
+
 ## Python Libraries Used
 
 - [Random](https://docs.python.org/3/library/random.html)  for computer random moves 
 - [Time and Sleep](https://realpython.com/python-sleep/) for text animation / disappearence
 - [Sys](https://docs.python.org/3/library/sys.html)  for specific parameters and functions
+
 
 ## Testing
 
@@ -117,15 +124,17 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 
   - Constant name 'variable' doesn't conform to UPPER_CASE naming style: variable used are not indended as constant in this game, they respect the expected naming convention, furthermore the code passes Pep8 Validator correctly.
 
-  - Redefining  name 'board' from outer the scope: this issue passes through Pep8 as well. As per mentor's confirmation  
+  - Redefining  name 'board' from outer the scope: this issue passes through Pep8 as well. As per mentor's confirmation 
 
-  ## Bugs and Solutions
+
+## Bugs and Solutions
 
 - Function for scores was not working, it was not being called correctly. Fixed the issue by calling it in  who_is_the_winner(board) function, right after checking win for all possible rows.
 
 - Method to make 'Game starting' disappear after few second was not working'. Needed to implement print(" " * len(game_starting), end="\r").
 
 - Name and move input validation was not fully functional. Went back to 'Love Sandwiches' video for exceptions, and implemented code correctly.
+
 
 ## Development and Deployment
 
@@ -148,10 +157,12 @@ The deployment is made using [Heroku](https://www.heroku.com/) following the lis
 11. You will see a message 'The app was successfully deployed when the app is built with python and all the depencencies
 12. Click on view and you will see the [deployed site](https://p3-tic-tac-toe.herokuapp.com/)
 
+
 ## Credits
-- A huge thank you goes to my mentor Martina T. who guided me with precious advices in order to pass the challenge. Further help and assistance was provided by Tutors.
+
+- A huge thanks goes to my mentor Martina T. who guided me with precious advices in order to pass the challenge. Further help and assistance was provided by Code institute Tutors and Love Sanwiches project.
 - Questions and answers by fellow students on Slack were heavily consulted.
 
- [Back to top](#table-of-contents)
+[Back to top](#table-of-contents)
 
 
