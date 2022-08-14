@@ -12,14 +12,18 @@ Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/)
 ***foto  amiresponsive
 
 ## Table Of Contents
+
 + [UX](#ux "UX")
   + [User Stories](#userstories "User Stories")
-    + [As a player:](#first-time-user "As a player:")
+    + [As a player:](#first-time-user "As a player")
 + [Features](#features "Features")  
   + [Introduction](#Introduction "Introduction")
   + [Instructions](#Instructions "Instructions") 
   + [Start Game](#Start-Game "Start Game")
-  + [Play Game](#Start-Game "Play Game")    
+  + [Play Game](#Start-Game "Play Game")
++ [Future Features](#future-features "Future Features") 
++ [External Sources Used](#external-sources-used "External Sources Used")  
+   
 
 
 
@@ -29,13 +33,13 @@ Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/)
 
 ## UX:
 ### User Stories
-#### As a player:
+#### As a player
 
 - I want to play a game with clear and easy instructions
 - I want to be able to see my scores
 - I want to be able to play the game again or quit easily    
 
-## Features:
+## Existing Features:
 
 ### Introduction
 
@@ -45,23 +49,61 @@ The "welcome to the game" statement has a sys.stdout.flush() method applied for 
 ![Introduction](images/introduction.screenshot.png) 
 
 ### Instructions
+
 After the validated name is inserted, a small explaination of the rules is shown , as per screenshot below:
 
 ![Instructions](images/instructions.png) 
 
 ### Start Game
+
 In the next step the user is asked to type "S" to start playing. Thanks to the validation applied, the terminal will accept any "S" format, uppercase or lowercase, if the element typed ny the user is different that "S" they will get error message stating to type "S" again correctly.
 
 ![Start Game](images/start-game.png) 
 
 ### Play Game
+
 The user will get to play first, with the Sumbol 'X', while the PC will be shown as "O". Based on the spot typed, from 1 to 9, the board will be filled with the relative symbol.
 The game is fully validated, so if the user choses a spot already taken they will get the relative message. In case of a win, the score will incerement and it's shown before right on top on the game board.
 
 ![Play Game](images/play-game.png)
 
 ### Play Again or quit
+
 Once the game is finished, a "Game ended" message is printed, and the user will have the option to start again (with previous scores), or quit the game. In case they want to quit, a thank you message will be printed.
 
 
 ![Play Game](images/replay-quit.png)
+ 
+ [Back to top](#table-of-contents)
+
+## Future Features
+
+- Give an option to the user to choose the symbol they want
+- Let user decide if they want to go first 
+- Option to allow the user to play with someone else, than the computer
+- Send scores via email
+- make an impossible to win game against the computer
+
+## Technology Used
+
+ - [Python](https://www.python.org/) 
+ - [JavaScript](https://www.javascript.com/) provided in the Code Institute Template
+ - [CSS](https://en.wikipedia.org/wiki/CSS)  provided in the Code Institute Template
+ - [HTML](https://en.wikipedia.org/wiki/HTML)  provided in the Code Institute Template
+
+## External Sources Used
+
+- Stack Overflow
+- W3 School
+- Youtube
+
+## Python Libraries Used
+
+- [Random](https://docs.python.org/3/library/random.html)  for computer random moves 
+- [Time and Sleep](https://realpython.com/python-sleep/) for text animation / disappearence
+- [Sys](https://docs.python.org/3/library/sys.html)  for specific parameters and functions
+
+## Testing
+
+Testing was conducted very carefully through the entire project
+
