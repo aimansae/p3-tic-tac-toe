@@ -18,7 +18,8 @@ Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/)
 + [Features](#features "Features")  
   + [Introduction](#Introduction "Introduction")
   + [Instructions](#Instructions "Instructions") 
-   + [Start Game](#Start-Game "Start Game")  
+  + [Start Game](#Start-Game "Start Game")
+  + [Play Game](#Start-Game "Play Game")    
 
 
 
@@ -45,9 +46,22 @@ The "welcome to the game" statement has a sys.stdout.flush() method applied for 
 
 ### Instructions
 After the validated name is inserted, a small explaination of the rules is shown , as per screenshot below:
-**foto 
+
+![Instructions](images/instructions.png) 
 
 ### Start Game
-In the next step the user is asked to type "S" to start playing. Thanks to the validation, the terminal wil accept any "S" format, uppercase or lower, if the elemeny typed is different that "S" they will get error message stating to tye "S" again.
+In the next step the user is asked to type "S" to start playing. Thanks to the validation applied, the terminal will accept any "S" format, uppercase or lowercase, if the element typed ny the user is different that "S" they will get error message stating to type "S" again correctly.
 
-**foto
+![Start Game](images/start-game.png) 
+
+### Play Game
+The user will get to play first, with the Sumbol 'X', while the PC will be shown as "O". Based on the spot typed, from 1 to 9, the board will be filled with the relative symbol.
+The game is fully validated, so if the user choses a spot already taken they will get the relative message. In case of a win, the score will incerement and it's shown before right on top on the game board.
+
+![Play Game](images/play-game.png)
+
+### Play Again or quit
+Once the game is finished, a "Game ended" message is printed, and the user will have the option to start again (with previous scores), or quit the game. In case they want to quit, a thank you message will be printed.
+
+
+![Play Game](images/replay-quit.png)

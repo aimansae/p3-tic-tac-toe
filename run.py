@@ -236,7 +236,7 @@ def return_to_first_page():
     '''
     Asks the user if they want to play again or quit when the game ends
     '''
-    print("Game Ended...\n")
+    print("*** Game Ended...*** \n")
 
     print("Enter '1' to play again.")
     print('Enter "Q" if you want to quit the game.\n')
