@@ -6,7 +6,7 @@ import random  # for computer move
 
 # welcome title with aimation
 
-welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
+welcome_title = " *** Welcome to the ultimate TIC TAC TOE Game! ***\n"
 
 for x in welcome_title:
     print(x, end='')
@@ -14,6 +14,7 @@ for x in welcome_title:
     sleep(.1)
 
 # main variables for board, player's move, winner and scores
+# will need to access them inside the functions using the global statement
 
 player_move = 'X'
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -76,7 +77,7 @@ def start_game():
             time.sleep(1)
             break
         else:
-            print(f"{start_game_input} Incorrect Input. Enter:'s' to start.")
+            print(f"{start_game_input} Incorrect Input. Enter:'S' to start.")
 
 
 start_game()
@@ -238,7 +239,7 @@ def return_to_first_page():
     print("Game Ended...\n")
 
     print("Enter '1' to play again.")
-    print('Enter "Q" if you want to quit the game.')
+    print('Enter "Q" if you want to quit the game.\n')
     while True:
         global name
         make_a_choice = input().strip()

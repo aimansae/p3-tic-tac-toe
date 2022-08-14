@@ -16,6 +16,9 @@ Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/)
   + [User Stories](#userstories "User Stories")
     + [As a player:](#first-time-user "As a player:")
 + [Features](#features "Features")  
+  + [Introduction](#Introduction "Introduction")
+  + [Instructions](#Instructions "Instructions") 
+   + [Start Game](#Start-Game "Start Game")  
 
 
 
@@ -32,3 +35,19 @@ Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/)
 - I want to be able to play the game again or quit easily    
 
 ## Features:
+
+### Introduction
+
+Once the program runs, the user is welcomed to the game and they are asked them to insert their Name. This will be used through the game for fidelization purposes.
+The "welcome to the game" statement has a sys.stdout.flush() method applied for a better visual effect.
+
+![Introduction](images/introduction.screenshot.png) 
+
+### Instructions
+After the validated name is inserted, a small explaination of the rules is shown , as per screenshot below:
+**foto 
+
+### Start Game
+In the next step the user is asked to type "S" to start playing. Thanks to the validation, the terminal wil accept any "S" format, uppercase or lower, if the elemeny typed is different that "S" they will get error message stating to tye "S" again.
+
+**foto
