@@ -1,31 +1,34 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TIC TAC TOE Game - Python
 
-Welcome aimansae,
+## Introduction
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Tic Tac Toe game is the third project challenge with Code Institute in order to acquire the Full Stack Developer diploma. The game is created using Python, as required.
 
-## Reminders
+Tic-tac-toe is a game where two players take turns in drawing either an ' O' or an ' X' in one square of a grid consisting of nine squares, against the computer.
+The first player who gets 3 same symbols in a row (horizontally, vertically or diagonally) wins!
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/) 
 
-## Creating the Heroku app
+***foto  amiresponsive
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Table Of Contents
++ [UX](#ux "UX")
+  + [User Stories](#userstories "User Stories")
+    + [As a player:](#first-time-user "As a player:")
++ [Features](#features "Features")  
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+## UX:
+### User Stories
+#### As a player:
+
+- I want to play a game with clear and easy instructions
+- I want to be able to see my scores
+- I want to be able to play the game again or quit easily    
+
+## Features:
