@@ -7,9 +7,9 @@ Tic Tac Toe game is the third project challenge with Code Institute in order to 
 Tic-tac-toe is a game where two players take turns in drawing either an ' O' or an ' X' in one square of a grid consisting of nine squares, against the computer.
 The first player who gets 3 same symbols in a row (horizontally, vertically or diagonally) wins!
 
-Please find the live progect [here:](https://p3-tic-tac-toe.herokuapp.com/) 
+Please find the live project [here:](https://p3-tic-tac-toe.herokuapp.com/) 
 
-***foto  amiresponsive
+[AmIResponsive](images/amiresponsive.png)
 
 ## Table Of Contents
 
@@ -74,7 +74,7 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 
 ![Play Game](images/replay-quit.png)
  
- [Back to top](#table-of-contents)
+[Back to top](#table-of-contents)
 
 ## Future Features
 
@@ -96,6 +96,7 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 - Stack Overflow
 - W3 School
 - Youtube
+- [Am I Responsive](https://ui.dev/amiresponsive) to create the main image for README.md
 
 ## Python Libraries Used
 
@@ -147,6 +148,10 @@ The deployment is made using [Heroku](https://www.heroku.com/) following the lis
 11. You will see a message 'The app was successfully deployed when the app is built with python and all the depencencies
 12. Click on view and you will see the [deployed site](https://p3-tic-tac-toe.herokuapp.com/)
 
+## Credits
+- A huge thank you goes to my mentor Martina T. who guided me with precious advices in order to pass the challenge. Further help and assistance was provided by Tutors.
+- Questions and answers by fellow students on Slack were heavily consulted.
 
+ [Back to top](#table-of-contents)
 
 
