@@ -6,7 +6,7 @@ import random  # for computer moves
 
 # welcome title with aimation
 
-welcome_title = " *** Welcome to the ultimate TIC TAC TOE Game! ***\n"
+welcome_title = "  °°° Welcome to the ultimate TIC TAC TOE Game! °°° \n"
 
 for x in welcome_title:
     print(x, end='')
@@ -55,7 +55,7 @@ def player_name():
 
         else:
             print("Oops Invalid input. Only letters accepted.")
-            print("\n Please try again.")
+            print("\nPlease try again.")
 
 
 player_name()
@@ -67,7 +67,7 @@ def start_game():
     '''
     while True:
         start_game_input = input("Type 'S' to start the game:\n").lower()
-        if start_game_input == 's':          
+        if start_game_input == 's':              
             # making Game Starting statement disappear after few secs
             game_starting = 'Game Starting...'
             print(game_starting, end="\r")
@@ -282,7 +282,7 @@ def user_choice():
                     print('Invalid selection. Number must be between 1/9!\n')
 
             except ValueError:
-                print("Please enter a valid number:\n")
+                print("Oops invalid input. Please enter a valid number:\n")
 
         who_is_the_winner(board)
         check_tie(board)
