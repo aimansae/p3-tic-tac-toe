@@ -6,7 +6,7 @@ import random  # for computer moves
 
 # welcome title with aimation
 
-welcome_title = "  °°° Welcome to the ultimate TIC TAC TOE Game! °°° \n"
+welcome_title = "Welcome to the ultimate TIC TAC TOE Game!\n"
 
 for x in welcome_title:
     print(x, end='')

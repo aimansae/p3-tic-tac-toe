@@ -118,7 +118,7 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 
 ![Validator Pep8](images/pep8.png)
 
-### Exception errors tesing:
+### Exception/Error testing:
 
 - User's name validation was tested checking all possible inputs. Empty spaces, numbers or symbols not accepted.
 
