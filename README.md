@@ -116,7 +116,31 @@ Once the game is finished, a "Game ended" message is printed, and the user will 
 Testing was conducted very carefully through the entire project. Pep 8 validator came back with no issues
 [Pep8](http://pep8online.com/)
 
-![Validator Pep8](images/pep8.png) 
+![Validator Pep8](images/pep8.png)
+
+### Exception errors tesing:
+
+- User's name validation was tested checking all possible inputs. Empty spaces, numbers or symbols not accepted.
+
+![Name Validation](images/name-validation.png)
+
+- Start game input validated carefully, testing all possible inputs. Empty spaces, numbers or symbols not accepted. Lower or Uppercase 'S' accepted.
+
+![Start Input Validation](images/start-input-validation.png)
+
+- Spot on board input validated carefully, testing all possible inputs. Empty spaces, letters or symbols not accepted.
+
+![Spot Input Validation](images/spot-input-validation.png)
+
+- Already occupied spot on board input validated, tested all possible inputs. 
+
+![Same spot Input Validation](images/same-spot-validation.png)
+
+- Quit or play input validated too. 1 for play again and 'Q' uppercase or lowercase allowed.
+
+![Quit replay Validation](images/quit-replay-validation.png)
+
+
 
 - Python pylint reports currently 3 main and known issues:
 
