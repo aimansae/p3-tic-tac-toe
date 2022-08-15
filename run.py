@@ -1,8 +1,8 @@
 '''importing modules'''
 from time import sleep  # animation for welcome title
-import time  # for game starting statement to disappear
+import time  # for game starting game statement to disappear after few seconds
 import sys  # to access parameters and functions
-import random  # for computer move
+import random  # for computer moves
 
 # welcome title with aimation
 
@@ -13,7 +13,7 @@ for x in welcome_title:
     sys.stdout.flush()
     sleep(.1)
 
-# main variables for board, player's move, winner and scores
+# main variables for board, player's move, winner name and scores
 # will need to access them inside the functions using the global statement
 
 player_move = 'X'
@@ -32,7 +32,7 @@ Here are the instructions: \n
 - You will start first with the symbol 'X'
 - The computer will be shown as the opposite symbol 'O'
 - Place your symbol typing a number from 1-9 on an empty spot
-- The first among the players who have 3 same symbol in a line,
+- The first among the players who have 3 same symbols in a line,
   horizontally, vertically or diagonally WINS!
 - If all the 9 spots are full and no one wins it's a tie!
 '''
@@ -67,8 +67,8 @@ def start_game():
     '''
     while True:
         start_game_input = input("Type 'S' to start the game:\n").lower()
-        if start_game_input == 's':
-            # making Game starting disappear after few secs
+        if start_game_input == 's':          
+            # making Game Starting statement disappear after few secs
             game_starting = 'Game Starting...'
             print(game_starting, end="\r")
             time.sleep(1)
@@ -76,7 +76,7 @@ def start_game():
             time.sleep(1)
             break
         else:
-            print(f"{start_game_input} Incorrect Input. Enter:'S' to start.")
+            print(f"{start_game_input} Incorrect Input. Enter 'S' to start.")
 
 
 start_game()
@@ -209,7 +209,7 @@ def who_is_the_winner(board):
 
 def check_score():
     '''
-    Increments score in case of a win
+    Increments scores in case of a win
     '''
     if winner == 'X':
         global x_score
