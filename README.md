@@ -148,7 +148,7 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 
   - Constant name 'variable' doesn't conform to UPPER_CASE naming style: variable used are not indended as constant in this game, they respect the expected naming conventions, furthermore the code passes Pep8 Validator correctly.
 
-  - Redefining  name 'board' from outer the scope: this issue passes through Pep8 as well. This was used for clarity purposes. As per Mentor and Tutors confirmation, again, Pep8 did not detect ny issue regarding this Pylint error.
+  - Redefining  name 'board' from outer the scope: this issue passes through Pep8 as well. This was used for clarity purposes. As per Mentor and Tutors confirmation, again, Pep8 did not detect any issue regarding this Pylint error.
 
 
 ## Bugs and Solutions
@@ -157,7 +157,7 @@ Testing was conducted very carefully through the entire project. Pep 8 validator
 
 - Method to make 'Game starting' disappear after few second was not working'. Needed to implement print(" " * len(game_starting), end="\r").
 
-- Name and move input validation was not fully functional. Went back to 'Love Sandwiches' video for exceptions, and implemented the code with the correct syntax.
+- Name and move input validation was not fully functional. Went back to 'Love Sandwiches' video for exceptions/errors, and implemented the code with the correct syntax.
 
 
 ## Development and Deployment
